@@ -1,0 +1,26 @@
+{
+  "name": "SQL",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create-tables": "node -r dotenv/config ./src/utils/db/create-tables.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MansiGanar/SQL.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MansiGanar/SQL/issues"
+  },
+  "homepage": "https://github.com/MansiGanar/SQL#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "fs-extra": "^10.0.0"
+  }
+}
