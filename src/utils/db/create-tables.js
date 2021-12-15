@@ -1,18 +1,19 @@
 import fs from "fs-extra";
 import path from "path";
-console.log(process.env);
-const readSQLFile = async () => {
+import pool from "./connect.js";
+
+const createTables = async () => {
   try {
     const filePath = path.join(process.cwd(), "src/utils/db/tables.sql");
     const fileContentAsBuffer = await fs.readFile(filePath);
     const fileContentAsString = fileContentAsBuffer.toString();
-    return fileContentAsString;
+    await pool.query(fileContentAsString);
+    console.log("Default tables are created");
   } catch (error) {
-    console.log("Reading SQL failed", error);
+    console.log(error.message);
   }
 };
 
 (async () => {
-  const sqlString = await readSQLFile();
-  console.log(sqlString);
+  await createTables();
 })();
